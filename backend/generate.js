@@ -13,7 +13,11 @@ generateRoute.post("/generate", async (req, res) => {
   archive.pipe(res);
 
   try {
- 
+    folderName.forEach((folder, folderIndex) => {
+      fileName[folderIndex].forEach((file) => {
+        archive.append("", { name: `${directoryName}/${folder}/${file}` });
+      });
+    });
 
     await archive.finalize();
   } catch (err) {
