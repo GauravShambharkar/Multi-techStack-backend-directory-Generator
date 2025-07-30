@@ -4,8 +4,9 @@ import Nav from "./Components/Routing/Nav";
 function App() {
   return (
     <>
-      {/* <Form /> */}
-      <Nav/>
+      <div className="w-full h-screen">
+        <Nav />
+      </div>
     </>
   );
 }

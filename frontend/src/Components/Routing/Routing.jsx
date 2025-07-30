@@ -7,11 +7,11 @@ const Routing = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />}>
+        <Route path="/home" element={<Home />}>
           Home
         </Route>
         <Route path="/generate" element={<Form />}>
-          GenerateDirectory
+          Get started
         </Route>
       </Routes>
     </>
