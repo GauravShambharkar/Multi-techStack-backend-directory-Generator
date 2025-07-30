@@ -13,7 +13,7 @@ const Home = () => {
   };
 
   return (
-    <div className="w-full h-full bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+    <div className="w-full h-screen max-sm:h-fit bg-gradient-to-b from-gray-900 to-gray-800 text-white">
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text ">

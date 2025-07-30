@@ -269,7 +269,7 @@ const Form = () => {
                   className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700
                           hover:from-blue-700 hover:via-purple-700 hover:to-blue-800
                           text-white font-semibold py-4 px-6 rounded-2xl
-                          transition-all duration-300 shadow-lg hover:shadow-xl
+                          transition-all duration-300 shadow-lg cursor-pointer hover:shadow-xl
                           transform hover:scale-95 flex items-center justify-center gap-3
                           text-lg focus:outline-none focus:ring-4 focus:ring-blue-500/30"
                 >
