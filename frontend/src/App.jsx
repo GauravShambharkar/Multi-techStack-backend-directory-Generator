@@ -12,14 +12,29 @@ import {
 
 import axios from "axios";
 import { saveAs } from "file-saver";
+import { useEffect } from "react";
 
 function App() {
   const [directoryName, setDirectoryName] = useState([""]);
   const [folderName, setFolderName] = useState([""]);
   const [fileName, setFileName] = useState([[""]]);
 
+  const fileNameValidation = () => {
+    for (let i = 0; i < fileName.length; i++) {
+      if (fileName[i].includes(".")) {
+        return true;
+      }
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!fileNameValidation()) {
+      alert("Each file name must include a '.exe' like .js or .ts");
+
+      return;
+    }
 
     const response = await axios.post(
       `http://localhost:3000/generate`,
@@ -32,7 +47,6 @@ function App() {
         responseType: "blob", // Important for file download
       }
     );
-
     saveAs(response.data, `${directoryName}.zip`);
   };
 
@@ -252,7 +266,7 @@ function App() {
                           hover:from-blue-700 hover:via-purple-700 hover:to-blue-800
                           text-white font-semibold py-4 px-6 rounded-2xl
                           transition-all duration-300 shadow-lg hover:shadow-xl
-                          transform hover:-translate-y-1 flex items-center justify-center gap-3
+                          transform hover:scale-95 flex items-center justify-center gap-3
                           text-lg focus:outline-none focus:ring-4 focus:ring-blue-500/30"
               >
                 <Download className="w-5 h-5" />
